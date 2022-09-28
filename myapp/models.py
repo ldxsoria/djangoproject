@@ -4,9 +4,16 @@ from django.db import models
 class Project(models.Model):
     name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 class Task(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     #Esto une una tarea a un proyeco y con CASCADE
     #elimino la tarea, si se elimina el proyecto
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    done = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
