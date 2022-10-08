@@ -50,3 +50,6 @@ def create_project(request):
             'form':CreateNewProject()
         })
         
+def project_detail(request, id):
+    print(id)
+    return render(request, 'projects/detail.html')
