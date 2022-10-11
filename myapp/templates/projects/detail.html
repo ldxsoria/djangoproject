@@ -2,6 +2,14 @@
 
 {% block content %}
 
-<h1> Project detail</h1>
+<h1>{{ project }}</h1>
+
+{% for task in tasks %}
+
+<div class="card ">
+    <p>{{task.title}}</p>
+</div>
+
+{% endfor %}
 
 {% endblock %}
